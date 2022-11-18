@@ -61,11 +61,21 @@ describe('Application for Quality Assurance Engineer', () => {
 
     })
 
-    it.only('adds the link to the repository with the solution', () => {
+    it('adds the link to the repository with the solution', () => {
 
         cy.enter('#grnhse_iframe').then(getBody => {
-            getBody().find('select[name="job_application[answers_attributes][1][answer_selected_options_attributes][1][question_option_id]"]')
-                .select('Yes', {force: true}).should('have.value', '95567109002')
+            getBody().find('textarea[name="job_application[answers_attributes][2][text_value]"]')
+                .type('https://github.com/surikova/staffbase-application')
+        })
+
+
+    })
+
+    it('submits the application', () => {
+
+        cy.enter('#grnhse_iframe').then(getBody => {
+            getBody().find('#submit_app')
+                //.click()
         })
 
 
