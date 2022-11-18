@@ -75,7 +75,7 @@ describe('Application for Quality Assurance Engineer', () => {
 
         cy.enter('#grnhse_iframe').then(getBody => {
             getBody().find('#submit_app')
-                //.click()
+                .click()
         })
 
 
